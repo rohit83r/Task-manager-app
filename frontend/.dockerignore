@@ -1,0 +1,11 @@
+node_modules
+dist
+.vite
+.env
+.env.*.local
+*.log
+.git
+.gitignore
+Dockerfile
+pnpm-lock.yaml
+vite.config.ts

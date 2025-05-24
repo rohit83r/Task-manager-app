@@ -1,6 +1,47 @@
 
 # 📖 Task Management Application
 
+## Demo Video 
+[](https://drive.google.com/file/d/1jDWCzr5AW7FxwUXIU97SzPpn0v50kQLr/view?usp=drive_link)
+
+## 🐳 Run using Docker
+
+### Fork this repo
+
+###  Setup Environment Variables
+
+Create a `.env` file in the project root:
+
+```
+DATABASE_URL="your_postgresql_connection_string"
+JWT_SECRET="your_jwt_secret"
+VITE_API_BASE_URL=http://localhost:3000/api
+```
+
+---
+
+
+
+Build & Start All Services
+
+At project root:
+
+```bash
+
+docker-compose up --build
+```
+
+This will:
+- Build and start React frontend
+- Build and start Express.js backend
+- Start a PostgreSQL container
+
+Access the application at [http://localhost:5173/](http://localhost:5173/)
+
+Swagger API docs: [http://localhost:3000/api-docs](http://localhost:3000/api-docs)
+
+---
+
 ## 📖 Overview
 
 This is a **Task Management Application** built with a modern full-stack setup. It supports:
@@ -33,61 +74,9 @@ This is a **Task Management Application** built with a modern full-stack setup. 
 
 ---
 
-##  Setup Environment Variables
 
-Create a `.env` file in the project root:
 
-```
-DATABASE_URL="your_postgresql_connection_string"
-JWT_SECRET="your_jwt_secret"
-VITE_API_BASE_URL=http://localhost:3000/api
-```
 
----
-
-##  Install Dependencies
-
-### Backend
-```bash
-
-cd backend
-pnpm install
-npx prisma generate
-npx prisma migrate dev --name init
-pnpm run dev
-```
-
-### Frontend
-```bash
-
-cd frontend
-pnpm install
-pnpm run dev
-```
-
----
-
-## 🐳 Dockerized Deployment
-
-Build & Start All Services
-
-At project root:
-
-```bash
-
-docker-compose up --build
-```
-
-This will:
-- Build and start React frontend
-- Build and start Express.js backend
-- Start a PostgreSQL container
-
-Access the application at [http://localhost:5173/](http://localhost:5173/)
-
-Swagger API docs: [http://localhost:3000/api-docs](http://localhost:3000/api-docs)
-
----
 
 ## 📘 API Endpoints Documentation
 
@@ -104,15 +93,6 @@ Swagger Documentation available at: [http://localhost:3000/api-docs](http://loca
 - `DELETE /api/tasks/{id}`: Delete a task.
 
 ---
-## ScreenShoots
-![](C:\Users\rohit\OneDrive\Pictures\Screenshots%201\Screenshot%202025-05-24%20112841.png)
-![](C:\Users\rohit\OneDrive\Pictures\Screenshots%201\Screenshot%202025-05-24%20131023.png)
-![](C:\Users\rohit\OneDrive\Pictures\Screenshots%201\Screenshot%202025-05-24%20142357.png)
-![](C:\Users\rohit\OneDrive\Pictures\Screenshots%201\Screenshot%202025-05-24%20142328.png)
-![](C:\Users\rohit\OneDrive\Pictures\Screenshots%201\Screenshot%202025-05-24%20142405.png)
-
-
-
 ## 📝 Notes
 
 - The app uses JWT Authentication, stored on frontend via `localStorage`
